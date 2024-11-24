@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "164196932037",
+    "project_id": "town-square-efb7b",
+    "storage_bucket": "town-square-efb7b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164196932037:android:7a7c87a4c28457f3ca53ac",
+        "android_client_info": {
+          "package_name": "com.example.townsquare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxqLen-fImG_VzrnPiRqP69V9Uq0CLqpo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

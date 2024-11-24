@@ -1,0 +1,156 @@
+const List<String> kCategories = [
+  'All',
+  'Sports',
+  'Food',
+  'Kids',
+  'Creative',
+  'Popular',
+  'Calm',
+];
+
+const List<Map<String, dynamic>> kMockupData = [
+  {
+    "id": 1,
+    "time": "08:00",
+    "duration": "60 min",
+    "title": "Beach Yoga",
+    "location": "La Playa de la Rada",
+    "availableSpots": 8,
+    "price": 9,
+    "category": "Sports",
+    "joined": false,
+    "tags": ["light"]
+  },
+  {
+    "id": 2,
+    "time": "09:00",
+    "duration": "60 min",
+    "title": "Reformer Pilates",
+    "location": "Wellness Studios",
+    "availableSpots": 4,
+    "joined": false,
+    "price": 15,
+    "category": "Sports",
+    "tags": ["medium", "childcare"]
+  },
+  {
+    "id": 3,
+    "time": "12:30",
+    "duration": "45 min",
+    "joined": false,
+    "title": "5-a-side Football",
+    "location": "Municipal Sports Center",
+    "availableSpots": 0,
+    "price": 19,
+    "category": "Sports",
+    "tags": ["medium", "childcare"]
+  },
+  {
+    "id": 4,
+    "time": "10:30",
+    "joined": false,
+    "duration": "90 min",
+    "title": "Pasta-Making Workshop",
+    "location": "Gourmet Kitchen Studio",
+    "availableSpots": 5,
+    "price": 25,
+    "category": "Foods",
+    "tags": ["light"]
+  },
+  {
+    "id": 5,
+    "time": "14:00",
+    "duration": "45 min",
+    "joined": false,
+    "title": "Kids Craft Corner",
+    "location": "Local Community Center",
+    "availableSpots": 10,
+    "price": 5,
+    "category": "Kids",
+    "tags": ["light", "childcare"]
+  },
+  {
+    "id": 6,
+    "time": "16:00",
+    "duration": "120 min",
+    "joined": false,
+    "title": "Canvas Painting for Beginners",
+    "location": "Art Lounge",
+    "availableSpots": 7,
+    "price": 20,
+    "category": "Creative",
+    "tags": ["light"]
+  },
+  {
+    "id": 7,
+    "time": "18:00",
+    "duration": "30 min",
+    "joined": false,
+    "title": "Guided Meditation",
+    "location": "Zen Wellness Room",
+    "availableSpots": 15,
+    "price": 7,
+    "category": "Calm",
+    "tags": ["light"]
+  },
+  {
+    "id": 8,
+    "time": "20:00",
+    "duration": "90 min",
+    "joined": false,
+    "title": "Live Music Night",
+    "location": "Riverside Café",
+    "availableSpots": 12,
+    "price": 12,
+    "category": "Popular",
+    "tags": ["medium"]
+  },
+  {
+    "id": 9,
+    "time": "11:00",
+    "duration": "60 min",
+    "joined": false,
+    "title": "Parent-and-Child Yoga",
+    "location": "Wellness Studios",
+    "availableSpots": 6,
+    "price": 10,
+    "category": "Kids",
+    "tags": ["light", "childcare"]
+  },
+  {
+    "id": 10,
+    "time": "19:30",
+    "duration": "60 min",
+    "joined": false,
+    "title": "Gourmet Tasting Night",
+    "location": "Fine Dine Restaurant",
+    "availableSpots": 3,
+    "price": 50,
+    "category": "Foods",
+    "tags": ["high"]
+  },
+  {
+    "id": 11,
+    "time": "15:00",
+    "duration": "45 min",
+    "joined": false,
+    "title": "Origami for All",
+    "location": "City Library",
+    "availableSpots": 10,
+    "price": 8,
+    "category": "Creative",
+    "tags": ["light"]
+  },
+  {
+    "id": 12,
+    "time": "13:00",
+    "duration": "30 min",
+    "joined": false,
+    "title": "Quick Calm Breathing Techniques",
+    "location": "Zen Wellness Room",
+    "availableSpots": 20,
+    "price": 5,
+    "category": "Calm",
+    "tags": ["light"]
+  }
+];
