@@ -11,7 +11,7 @@ super fun life in the town they live in.
 - Filter activities by category
 - Join an activity
 
-## 📱 Mobile
+## 📱 Mobile View
 
 <div style="display: flex; justify-content: space-between;">
   <img src="assets/images/mobile_home.jpg" alt="Dashboard" width="30%" />
@@ -21,7 +21,7 @@ super fun life in the town they live in.
   <img src="assets/images/mobile_inprogress.jpg" alt="Workflow" width="30%" />
 </div>
 
-## 💻 Web
+## 💻 Web View
 
 <div style="display: flex; justify-content: space-between;">
   <img src="assets/images/web_home.png" alt="Dashboard" width="50%" />
