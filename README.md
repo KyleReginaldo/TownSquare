@@ -13,6 +13,8 @@ super fun life in the town they live in.
 - Filter activities by category
 - Join an activity
 
+---
+
 - 🔄 **State Management**: Using **Flutter BLoC** for efficient and scalable state management.
 - 🎨 **SVG Icons**: All icons are SVG-based for better design flexibility and scalability.
 - 🏗️ **Clean Architecture**: Organized code with a layered structure for maintainability and testability.
