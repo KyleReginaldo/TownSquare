@@ -2,7 +2,7 @@
 
 ## Description
 
-A mobile and webapp that makes it easy for fathers like me , and also for mothers to have a
+A mobile and webapp that makes it easy for users to have a
 super fun life in the town they live in.
 
 ## 🌟 Features
@@ -11,33 +11,38 @@ super fun life in the town they live in.
 - Filter activities by category
 - Join an activity
 
-## 📱 Mobile
+## 📱 Mobile View
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="assets/images/mobile_home.jpg" alt="Dashboard" width="30%" />
-  <img src="assets/images/mobile_home.jpg" alt="Settings" width="30%" />
-  <img src="assets/images/mobile_home.jpg" alt="Workflow" width="30%" />
+  <div>
+    <p>Home</p>
+    <img src="assets/images/mobile_home.jpg" alt="Dashboard" width="30%" />
+  </div>
+  <div>
+    <p>Joined</p>
+    <img src="assets/images/mobile_joined.jpg" alt="Dashboard" width="30%" />
+  </div>
+  <div>
+    <p>Unjoin</p>
+    <img src="assets/images/mobile_unjoin.jpg" alt="Dashboard" width="30%" />
+  </div>
+  <div>
+    <p>Empty</p>
+    <img src="assets/images/mobile_empty.jpg" alt="Dashboard" width="30%" />
+  </div>
+  <div>
+    <p>In Progress</p>
+    <img src="assets/images/mobile_inprogress.jpg" alt="Dashboard" width="30%" />
+  </div>
+  
 </div>
-- home
-  ![Project Banner](assets/images/mobile_home.jpg)
-- joined
-  ![Project Banner](assets/images/mobile_joined.jpg)
-- unjoin
-  ![Project Banner](assets/images/mobile_unjoin.jpg)
-- empty
-  ![Project Banner](assets/images/mobile_empty.jpg)
-- in progress
-  ![Project Banner](assets/images/mobile_inprogress.jpg)
 
-## 💻 Web
+## 💻 Web View
 
-- home
-  ![Project Banner](assets/images/web_home.png)
-- joined
-  ![Project Banner](assets/images/web_joined.png)
-- unjoin
-  ![Project Banner](assets/images/web_unjoin.png)
-- empty
-  ![Project Banner](assets/images/web_empty.png)
-- in progress
-  ![Project Banner](assets/images/web_inprogress.png)
+<div style="display: flex; justify-content: space-between;">
+  <img src="assets/images/web_home.png" alt="Dashboard" width="50%" />
+  <img src="assets/images/web_joined.png" alt="Settings" width="50%" />
+  <img src="assets/images/web_unjoin.png" alt="Workflow" width="50%" />
+  <img src="assets/images/web_empty.png" alt="Workflow" width="50%" />
+  <img src="assets/images/web_inprogress.png" alt="Workflow" width="50%" />
+</div>
