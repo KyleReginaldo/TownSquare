@@ -14,11 +14,26 @@ super fun life in the town they live in.
 ## 📱 Mobile View
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="assets/images/mobile_home.jpg" alt="Dashboard" width="30%" />
-  <img src="assets/images/mobile_joined.jpg" alt="Settings" width="30%" />
-  <img src="assets/images/mobile_unjoin.jpg" alt="Workflow" width="30%" />
-  <img src="assets/images/mobile_empty.jpg" alt="Workflow" width="30%" />
-  <img src="assets/images/mobile_inprogress.jpg" alt="Workflow" width="30%" />
+    <div>
+        <p>Home</p>
+        <img src="assets/images/mobile_home.jpg" alt="Dashboard" width="30%" />
+    </div>
+    <div>
+        <p>Joined</p>
+        <img src="assets/images/mobile_joined.jpg" alt="Dashboard" width="30%" />
+    </div>
+    <div>
+        <p>Unjoin</p>
+        <img src="assets/images/mobile_unjoin.jpg" alt="Dashboard" width="30%" />
+    </div>
+    <div>
+        <p>Empty</p>
+        <img src="assets/images/mobile_empty.jpg" alt="Dashboard" width="30%" />
+    </div>
+    <div>
+        <p>In Progress</p>
+        <img src="assets/images/mobile_inprogress.jpg" alt="Dashboard" width="30%" />
+    </div>
 </div>
 
 ## 💻 Web View
