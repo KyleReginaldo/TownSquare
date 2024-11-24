@@ -11,4 +11,15 @@ super fun life in the town they live in.
 - Filter activities by category
 - Join an activity
 
-![Project Banner](assets/images/web_home.png)
+## Web
+
+- home
+  ![Project Banner](assets/images/web_home.png)
+- joined
+  ![Project Banner](assets/images/web_joined.png)
+- unjoin
+  ![Project Banner](assets/images/web_unjoin.png)
+- empty
+  ![Project Banner](assets/images/web_empty.png)
+- in progress
+  ![Project Banner](assets/images/web_inprogress.png)
