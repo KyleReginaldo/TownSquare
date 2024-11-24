@@ -1,6 +1,6 @@
 # TownSquare
 
-[Text to Display](https://town-square-efb7b.web.app/)
+[Visit Website](https://town-square-efb7b.web.app/)
 
 ## Description
 
