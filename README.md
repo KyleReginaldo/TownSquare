@@ -5,14 +5,19 @@
 A mobile and webapp that makes it easy for fathers like me , and also for mothers to have a
 super fun life in the town they live in.
 
-## Features
+## 🌟 Features
 
 - View today's activities
 - Filter activities by category
 - Join an activity
 
-## Mobile
+## 📱 Mobile
 
+<div style="display: flex; justify-content: space-between;">
+  <img src="assets/images/mobile_home.jpg" alt="Dashboard" width="30%" />
+  <img src="assets/images/mobile_home.jpg" alt="Settings" width="30%" />
+  <img src="assets/images/mobile_home.jpg" alt="Workflow" width="30%" />
+</div>
 - home
   ![Project Banner](assets/images/mobile_home.jpg)
 - joined
@@ -24,7 +29,7 @@ super fun life in the town they live in.
 - in progress
   ![Project Banner](assets/images/mobile_inprogress.jpg)
 
-## Web
+## 💻 Web
 
 - home
   ![Project Banner](assets/images/web_home.png)
