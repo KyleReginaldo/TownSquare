@@ -1,16 +1,14 @@
-# townsquare
+# TownSquare
 
-A new Flutter project.
+## Description
 
-## Getting Started
+A mobile and webapp that makes it easy for fathers like me , and also for mothers to have a
+super fun life in the town they live in.
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+- View today's activities
+- Filter activities by category
+- Join an activity
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Project Banner](assets/readme/web_home.png)
