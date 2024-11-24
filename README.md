@@ -1,11 +1,11 @@
 # TownSquare
 
-[Visit Website](https://town-square-efb7b.web.app/)
-
 ## Description
 
 A mobile and webapp that makes it easy for users to have a
 super fun life in the town they live in.
+
+[Visit Website](https://town-square-efb7b.web.app/)
 
 ## 🌟 Features
 
