@@ -23,13 +23,10 @@ super fun life in the town they live in.
 
 ## 💻 Web
 
-- home
-  ![Project Banner](assets/images/web_home.png)
-- joined
-  ![Project Banner](assets/images/web_joined.png)
-- unjoin
-  ![Project Banner](assets/images/web_unjoin.png)
-- empty
-  ![Project Banner](assets/images/web_empty.png)
-- in progress
-  ![Project Banner](assets/images/web_inprogress.png)
+<div style="display: flex; justify-content: space-between;">
+  <img src="assets/images/web_home.png" alt="Dashboard" width="50%" />
+  <img src="assets/images/web_joined.png" alt="Settings" width="50%" />
+  <img src="assets/images/web_unjoin.png" alt="Workflow" width="50%" />
+  <img src="assets/images/web_empty.png" alt="Workflow" width="50%" />
+  <img src="assets/images/web_inprogress.png" alt="Workflow" width="50%" />
+</div>
