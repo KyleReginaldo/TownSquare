@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
@@ -5,17 +6,21 @@ import '../../../core/constant/icons.dart';
 import '../../../core/theme/colors.dart';
 
 class TsSearchBar extends StatelessWidget {
-  const TsSearchBar({super.key});
+  final VoidCallback? onTap;
+  const TsSearchBar({
+    super.key,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SearchBar(
       hintText: 'What do you feel like doing?',
+      onTap: onTap,
       hintStyle: const MaterialStatePropertyAll(
         TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w500,
-          color: Color(0xFF9E9E9E),
+          fontSize: 14,
+          color: kNeutral500,
         ),
       ),
       trailing: [
@@ -36,7 +41,7 @@ class TsSearchBar extends StatelessWidget {
       padding: const MaterialStatePropertyAll(
         EdgeInsets.symmetric(
           horizontal: 10,
-          vertical: 5,
+          vertical: 4,
         ),
       ),
       backgroundColor: const MaterialStatePropertyAll(kWhite),

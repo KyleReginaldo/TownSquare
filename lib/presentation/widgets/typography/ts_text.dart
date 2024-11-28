@@ -7,6 +7,9 @@ class TsText extends StatelessWidget {
   final FontWeight? weight;
   final Color? color;
   final double? letterSpacing;
+  final TextOverflow? overflow;
+  final int? maxLines;
+  final TextAlign? align;
   const TsText(
     this.text, {
     super.key,
@@ -14,12 +17,18 @@ class TsText extends StatelessWidget {
     this.weight,
     this.color,
     this.letterSpacing,
+    this.overflow,
+    this.maxLines,
+    this.align,
   });
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      overflow: overflow,
+      maxLines: maxLines,
+      textAlign: align,
       style: TextStyle(
         fontSize: size ?? 15,
         fontWeight: weight,

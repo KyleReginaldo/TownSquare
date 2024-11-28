@@ -17,7 +17,7 @@ class HomeHeader extends StatelessWidget {
         TsText(
           'Tues, Nov 12',
           size:
-              ResponsiveBreakpoints.of(context).smallerThan(DESKTOP) ? 15 : 16,
+              ResponsiveBreakpoints.of(context).smallerThan(DESKTOP) ? 12 : 14,
           weight: FontWeight.w500,
           color: const Color(0xFF9B9B9B),
         ),

@@ -2,19 +2,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:townsquare/presentation/bloc/bloc.dart';
 import 'package:townsquare/presentation/widgets/container/ts_state_container.dart';
 
 import '../../../core/theme/colors.dart';
 import '../../../core/usecase/usecase.dart';
-import '../../bloc/available_activity/available_activity_cubit.dart';
 import '../container/activity_container.dart';
 import '../typography/ts_text.dart';
 
 class AvailableActivity extends StatefulWidget {
-  final GlobalKey columnKey;
   const AvailableActivity({
     super.key,
-    required this.columnKey,
   });
 
   @override
@@ -22,9 +20,22 @@ class AvailableActivity extends StatefulWidget {
 }
 
 class _AvailableActivityState extends State<AvailableActivity>
-    with TickerProviderStateMixin {
+    with SingleTickerProviderStateMixin {
   late AnimationController controller;
   late Animation<double> animation;
+  final GlobalKey columnKey = GlobalKey();
+  void calculateColumnHeight() {
+    final RenderBox renderBox =
+        columnKey.currentContext!.findRenderObject() as RenderBox;
+    context.read<TimelineDisplayCubit>().setColumnHeight(renderBox.size.height);
+  }
+
+  @override
+  dispose() {
+    controller.dispose(); // you need this
+    super.dispose();
+  }
+
   @override
   void initState() {
     controller = AnimationController(
@@ -35,16 +46,8 @@ class _AvailableActivityState extends State<AvailableActivity>
         upperBound: 1);
     animation =
         CurvedAnimation(parent: controller, curve: Curves.fastOutSlowIn);
-
     controller.forward();
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    // controller.dispose();
-    // animation.removeListener(() {});
-    super.dispose();
   }
 
   @override
@@ -54,6 +57,9 @@ class _AvailableActivityState extends State<AvailableActivity>
         if (state is AvailableActivityLoaded) {
           controller.reset();
           controller.forward();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            calculateColumnHeight();
+          });
         } else if (state is AvailableActivityEmpty) {
           controller.reset();
           controller.forward();
@@ -62,7 +68,7 @@ class _AvailableActivityState extends State<AvailableActivity>
       builder: (context, state) {
         if (state is AvailableActivityLoaded) {
           return Column(
-            key: widget.columnKey,
+            key: columnKey,
             children: state.activities
                 .map((e) => FadeTransition(
                       key: Key('${e.id}'),

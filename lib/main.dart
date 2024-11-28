@@ -9,7 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:townsquare/core/theme/ts_theme.dart';
 import 'package:townsquare/dependency.dart';
 import 'package:townsquare/firebase_options.dart';
-import 'package:townsquare/presentation/bloc/available_activity/available_activity_cubit.dart';
+import 'package:townsquare/presentation/bloc/bloc.dart';
 
 import 'presentation/screen/screens.dart';
 
@@ -31,8 +31,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var brightness = MediaQuery.of(context).platformBrightness;
-    print(brightness);
     return ResponsiveSizer(builder: (p0, p1, p2) {
       return MaterialApp(
         scrollBehavior: const MaterialScrollBehavior().copyWith(
@@ -45,19 +43,26 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => ResponsiveBreakpoints.builder(
           child: child!,
           breakpoints: [
-            const Breakpoint(start: 0, end: 450, name: MOBILE),
-            const Breakpoint(start: 451, end: 1147, name: TABLET),
-            const Breakpoint(start: 1148, end: 1920, name: DESKTOP),
+            const Breakpoint(start: 0, end: 766, name: MOBILE),
+            const Breakpoint(start: 767, end: 979, name: TABLET),
+            const Breakpoint(start: 980, end: 1920, name: DESKTOP),
             const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
           ],
         ),
         debugShowCheckedModeBanner: false,
         title: 'TownSquare',
         themeMode: ThemeMode.light,
-        darkTheme: TsTheme.getDarkTheme(),
+        // darkTheme: TsTheme.getDarkTheme(),
         theme: TsTheme.getLightTheme(),
-        home: BlocProvider(
-          create: (context) => sl<AvailableActivityCubit>(),
+        home: MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => sl<AvailableActivityCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => TimelineDisplayCubit(),
+            ),
+          ],
           child: const MainScreen(),
         ),
       );

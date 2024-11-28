@@ -31,7 +31,7 @@ class CategoryContainer extends StatelessWidget {
         ),
         child: TsText(
           text,
-          size: 16,
+          size: 14,
           weight: FontWeight.w500,
         ),
       ),

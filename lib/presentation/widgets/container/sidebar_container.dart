@@ -11,6 +11,8 @@ class SideBarContainer extends StatelessWidget {
   final String title;
   final String? topTitle;
   final String subtitle;
+  final double? titleSize;
+  final double? subtitleSize;
   final Widget button;
   final Color? color;
   final Color? textColor;
@@ -21,6 +23,8 @@ class SideBarContainer extends StatelessWidget {
     required this.title,
     this.topTitle,
     required this.subtitle,
+    this.titleSize,
+    this.subtitleSize,
     required this.button,
     this.color,
     this.textColor,
@@ -29,12 +33,12 @@ class SideBarContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
         height: height,
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: color ?? kSecondaryYellow200,
+          color: color ?? const Color(0xFFFBF2C0),
           borderRadius: BorderRadius.circular(10),
           image: image != null
               ? DecorationImage(
@@ -65,26 +69,29 @@ class SideBarContainer extends StatelessWidget {
             if (topTitle != null)
               TsText(
                 topTitle!,
-                size: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                    ? 15
-                    : 18,
+                weight: FontWeight.w500,
+                size: titleSize ??
+                    (ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+                        ? 15
+                        : 20),
                 color: textColor ?? kWhite,
               ),
             const Spacer(),
             TsText(
               title,
-              size: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                  ? 15
-                  : 18,
+              size: titleSize ??
+                  (ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+                      ? 15
+                      : 20),
               color: textColor ?? kWhite,
             ),
             const SizedBox(height: 8),
             TsText(
               subtitle,
-              size: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                  ? 14
-                  : 16,
-              weight: FontWeight.w500,
+              size: subtitleSize ??
+                  (ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+                      ? 14
+                      : 12),
               color: textColor ?? kWhite,
             ),
             const SizedBox(height: 16),

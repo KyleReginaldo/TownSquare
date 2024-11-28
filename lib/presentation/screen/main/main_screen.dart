@@ -48,6 +48,13 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ResponsiveBreakpoints.of(context).smallerOrEqualTo(TABLET)
@@ -74,6 +81,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 4.h, right: 2.h),
+                    alignment: Alignment.topCenter,
                     width: MediaQuery.sizeOf(context).width * 0.22,
                     child: Column(
                       children: [
@@ -92,6 +100,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                             opacity: animation,
                             child: SideBarContainer(
                               height: 240,
+                              titleSize: 20,
                               title: 'Weekly workshops for kids',
                               textColor: kBlack,
                               subtitle:
@@ -106,19 +115,15 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                                   decoration: BoxDecoration(
                                       color: kWhite,
                                       borderRadius: BorderRadius.circular(8)),
-                                  child: Row(
+                                  child: const Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       TsText(
                                         'Learn more',
-                                        size: ResponsiveBreakpoints.of(context)
-                                                .smallerThan(DESKTOP)
-                                            ? 15
-                                            : 16,
-                                        weight: FontWeight.w600,
+                                        size: 15,
                                       ),
-                                      const Icon(
+                                      Icon(
                                         Icons.arrow_circle_right_outlined,
                                       ),
                                     ],
@@ -134,7 +139,9 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                             opacity: animation,
                             child: SideBarContainer(
                               image: 'assets/images/popular_events.png',
-                              height: 300,
+                              height: 290,
+                              titleSize: 20,
+                              subtitleSize: 14,
                               title: '',
                               topTitle: 'Popular events near you!',
                               subtitle:
@@ -146,18 +153,23 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
                                   },
                                   child: Container(
                                     alignment: Alignment.center,
+                                    constraints: const BoxConstraints(
+                                      maxWidth: 190,
+                                    ),
                                     margin:
                                         EdgeInsets.symmetric(horizontal: 4.h),
-                                    padding: const EdgeInsets.all(10),
-                                    width: 188,
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 10,
+                                    ),
                                     height: 39,
                                     decoration: BoxDecoration(
                                         color: kWhite,
                                         borderRadius: BorderRadius.circular(8)),
                                     child: const TsText(
                                       'See more',
-                                      size: 15,
-                                      weight: FontWeight.w600,
+                                      size: 16,
+                                      align: TextAlign.center,
+                                      weight: FontWeight.w500,
                                     ),
                                   ),
                                 ),

@@ -34,7 +34,15 @@ class ActivityContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(2.h),
+      padding: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+          ? const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 8,
+            )
+          : const EdgeInsets.symmetric(
+              horizontal: 32,
+              vertical: 12,
+            ),
       margin: const EdgeInsets.only(top: 16),
       decoration: BoxDecoration(
         color: kWhite,
@@ -64,19 +72,16 @@ class ActivityContainer extends StatelessWidget {
                 RichText(
                   text: TextSpan(
                     text: time,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: kBlack,
-                      fontSize:
-                          ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                              ? 14
-                              : 15,
-                      fontWeight: FontWeight.w600,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
                     ),
                     children: [
                       TextSpan(
                         text: ' ($duration) ',
                         style: const TextStyle(
-                          color: kNeutral600,
+                          color: kNeutral500,
                         ),
                       ),
                     ],
@@ -86,8 +91,8 @@ class ActivityContainer extends StatelessWidget {
                 TsText(
                   title,
                   size: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                      ? 16
-                      : 18,
+                      ? 14
+                      : 20,
                   weight: FontWeight.bold,
                 ),
                 const SizedBox(height: 10),
@@ -99,23 +104,21 @@ class ActivityContainer extends StatelessWidget {
                     SizedBox(width: 0.1.w),
                     TsText(
                       location,
-                      color: kNeutral600,
+                      color: kNeutral500,
+                      weight: FontWeight.w500,
                       size:
                           ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                              ? 15
-                              : 16,
+                              ? 12
+                              : 14,
                     ),
                   ],
                 ),
                 const SizedBox(height: 10),
                 Wrap(
                   runSpacing: 5,
+                  spacing: 5,
                   children: [
                     Container(
-                      width:
-                          ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                              ? 112
-                              : 132,
                       padding: const EdgeInsets.symmetric(
                         vertical: 4,
                         horizontal: 8,
@@ -126,29 +129,28 @@ class ActivityContainer extends StatelessWidget {
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           SvgPicture.asset(
                             kUser,
-                            height: 15,
-                            width: 15,
+                            height: 12,
+                            width: 12,
                           ),
                           const SizedBox(width: 4),
                           TsText(
                             '$spots spots left',
-                            color: const Color(0xFF9E9E9E),
-                            weight: FontWeight.w600,
+                            color: kNeutral500,
+                            weight: FontWeight.w500,
                             size: ResponsiveBreakpoints.of(context)
                                     .smallerThan(DESKTOP)
-                                ? 14
-                                : 15,
+                                ? 10
+                                : 12,
                           ),
                         ],
                       ),
                     ),
-                    const SizedBox(width: 8),
                     ...tags.map(
                       (e) => Container(
-                        margin: const EdgeInsets.only(right: 8),
                         padding: const EdgeInsets.symmetric(
                           vertical: 4,
                           horizontal: 8,
@@ -160,11 +162,11 @@ class ActivityContainer extends StatelessWidget {
                         child: TsText(
                           e,
                           color: getTagColor(e).title,
-                          weight: FontWeight.w600,
+                          weight: FontWeight.bold,
                           size: ResponsiveBreakpoints.of(context)
                                   .smallerThan(DESKTOP)
-                              ? 14
-                              : 15,
+                              ? 10
+                              : 12,
                         ),
                       ),
                     ),
@@ -174,24 +176,27 @@ class ActivityContainer extends StatelessWidget {
             ),
           ),
           Column(
-            crossAxisAlignment: MediaQuery.sizeOf(context).width < 600
-                ? CrossAxisAlignment.center
-                : CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               TsText(
-                '9€',
+                '${price.toStringAsFixed(0)}€',
                 size: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                    ? 15.sp
-                    : 12.sp,
+                    ? 14
+                    : 20,
                 weight: FontWeight.w600,
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 12),
               joined
                   ? ElevatedButton(
                       onPressed: (spots < 1 && !joined) ? null : onTap,
-                      style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(
+                      style: ButtonStyle(
+                        backgroundColor: const MaterialStatePropertyAll(
                           kBlack,
+                        ),
+                        shape: MaterialStatePropertyAll(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
                         ),
                       ),
                       child: const Padding(
@@ -199,7 +204,7 @@ class ActivityContainer extends StatelessWidget {
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         child: TsText(
                           'Joined',
-                          size: 15,
+                          size: 14,
                         ),
                       ),
                     )
@@ -209,13 +214,18 @@ class ActivityContainer extends StatelessWidget {
                         backgroundColor: MaterialStatePropertyAll(
                           spots < 1 ? kNeutral500 : kBlack,
                         ),
+                        shape: MaterialStatePropertyAll(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                        ),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.symmetric(
                             horizontal: 8, vertical: 4),
                         child: TsText(
                           spots < 1 ? 'Sold out' : 'Join',
-                          size: 15,
+                          size: 14,
                         ),
                       ),
                     ),

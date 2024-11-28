@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:townsquare/core/utils/utils.dart';
 
 import '../../../core/theme/colors.dart';
@@ -12,10 +11,7 @@ class ProgressContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 2.h,
-        vertical: 2.h,
-      ),
+      padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         color: kPrimary200,
         borderRadius: BorderRadius.circular(10),
@@ -33,76 +29,138 @@ class ProgressContainer extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          TsText(
-            'You\'re close to your goal!',
-            size: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                ? 15
-                : 20,
-            weight: FontWeight.w600,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TsText(
+                  'You\'re close to your goal!',
+                  size: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+                      ? 16
+                      : 20,
+                  weight: FontWeight.w500,
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const TsText(
+                  'Join more sport activities to\ncollect more points',
+                  size: 12,
+                  weight: FontWeight.w500,
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Wrap(
+                  runSpacing: 5,
+                  spacing: 5,
                   children: [
-                    SizedBox(
-                      height:
-                          ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                              ? 8
-                              : 16,
+                    TsFilledButton(
+                      text: 'Join now',
+                      onTap: () {
+                        Utils.showInprogressBar(context: context);
+                      },
                     ),
-                    TsText(
-                      'Join more sport activities to\ncollect more points',
-                      size:
-                          ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                              ? 15
-                              : 14,
-                      weight: FontWeight.w500,
+
+                    TsFilledButton(
+                      text: 'My points',
+                      onTap: () {
+                        Utils.showInprogressBar(context: context);
+                      },
                     ),
-                    SizedBox(
-                      height:
-                          ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
-                              ? 8
-                              : 16,
-                    ),
-                    Row(
-                      children: [
-                        TsElevatedButton(
-                          'Join now',
-                          desktopTextSize: 14,
-                          mobileTabletTextSize: 14,
-                          onTap: () {
-                            Utils.showInprogressBar(context: context);
-                          },
-                        ),
-                        const SizedBox(width: 8),
-                        TsElevatedButton(
-                          'My points',
-                          desktopTextSize: 14,
-                          mobileTabletTextSize: 14,
-                          onTap: () {
-                            Utils.showInprogressBar(context: context);
-                          },
-                        ),
-                      ],
-                    ),
+                    // TsElevatedButton(
+                    //   'Join now',
+                    //   desktopTextSize: 12,
+                    //   mobileTextSize: 12,
+                    //   tabletTextSize: 12,
+                    //   onTap: () {
+                    //     Utils.showInprogressBar(context: context);
+                    //   },
+                    // ),
                   ],
                 ),
-              ),
-              if (ResponsiveBreakpoints.of(context).largerThan(DESKTOP) ||
-                  ResponsiveBreakpoints.of(context).smallerThan(DESKTOP))
-                const TsCircularProgressBar(),
-            ],
+              ],
+            ),
           ),
+          const TsCircularProgressBar(),
         ],
       ),
     );
   }
 }
+
+
+
+//  Column(
+//         crossAxisAlignment: CrossAxisAlignment.start,
+//         children: [
+//           TsText(
+//             'You\'re close to your goal!',
+//             size: ResponsiveBreakpoints.of(context).smallerThan(DESKTOP)
+//                 ? 16
+//                 : 20,
+//             weight: FontWeight.w500,
+//           ),
+//           const SizedBox(
+//             height: 16,
+//           ),
+//           Row(
+//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               Expanded(
+//                 child: Column(
+//                   mainAxisAlignment: MainAxisAlignment.start,
+//                   crossAxisAlignment: CrossAxisAlignment.start,
+//                   children: [
+//                     // if (ResponsiveBreakpoints.of(context)
+//                     //     .largerThan(TABLET)) ...{
+//                     //   const SizedBox(height: 8),
+//                     //   const TsCircularProgressBar(),
+//                     // },
+//                     const TsText(
+//                       'Join more sport activities to\ncollect more points',
+//                       size: 12,
+//                       weight: FontWeight.w500,
+//                     ),
+//                     const SizedBox(
+//                       height: 16,
+//                     ),
+//                     Wrap(
+//                       runSpacing: 5,
+//                       spacing: 5,
+//                       children: [
+//                         TsElevatedButton(
+//                           'Join now',
+//                           desktopTextSize: 12,
+//                           mobileTextSize: 12,
+//                           tabletTextSize: 12,
+//                           onTap: () {
+//                             Utils.showInprogressBar(context: context);
+//                           },
+//                         ),
+//                         TsElevatedButton(
+//                           'My points',
+//                           desktopTextSize: 12,
+//                           mobileTextSize: 12,
+//                           tabletTextSize: 12,
+//                           onTap: () {
+//                             Utils.showInprogressBar(context: context);
+//                           },
+//                         ),
+//                       ],
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               // if (ResponsiveBreakpoints.of(context).smallerThan(TABLET))
+//               const TsCircularProgressBar(),
+//             ],
+//           ),
+//         ],
+//       ),
